@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 mrgnbtm">
+      <h2>Create User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">First Name</label>
+            <input
+              style="background-color: rgb(201, 219, 236)"
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="First Name"
+              required="required"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Last Name</label>
+            <input
+              style="background-color: rgb(201, 219, 236)"
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              id="exampleInputPassword1"
+              placeholder="Last Name"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              style="background-color: rgb(201, 219, 236)"
+              type="text"
+              class="form-control"
+              formControlName="email"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              required="required"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          [disabled]="!userForm.valid"
+          class="btn btn-danger"
+        >
+          Create
+        </button>
+        &#160;&nbsp;
+        <input class="btn btn-danger" type="reset" value="Clear" />
+        &#160;&nbsp;
+        <input
+          type="button"
+          class="btn btn-primary"
+          onClick="alert('⚠️ Vous allez être déconnecté!');location.href='https://moodle.technofuturtic.be/course/index.php?categoryid=222'"
+          value="Cancel"
+        />
+      </form>
+    </div>
+    <div class="col-md-4 mrgnbtm">
+      <app-display-board
+        [userCount]="userCount"
+        (getUsersEvent)="getAllUsers()"
+      >
+      </app-display-board>
+    </div>
+  </div>
+</div>
+<div class="mrgnbtm">
+  <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
+</div>
+<br /><br /><br />
+<footer class="footer">
+  <p>
+    © 2023, Mon test Java-Angular / Cyber-sécurité 2023 ❙❙ Szmulikowski Vincent
+    (stagiaire techofuturtic)
+  </p>
+</footer>

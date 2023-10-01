@@ -1,0 +1,32 @@
+.div-button {
+  text-align: center;
+  }
+
+.avatar-wrapper {
+  height: 100px;
+  width: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 5px 5px 25px -4px rgb(18, 180, 3);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  &:hover .profile-pic {
+    opacity: 0.5;
+  }
+
+  .profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    content: "\f007";
+    background: #ecf0f1;
+    color: #34495e;
+  }
+}
+
+

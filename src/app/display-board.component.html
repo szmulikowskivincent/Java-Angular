@@ -1,0 +1,19 @@
+<div class="display-board">
+  <a href="" download="">
+    <img src="assets/Icone_download.png" title="📁 download" width="18%" />
+  </a>
+  <h4>Users Created</h4>
+  <br /><br />
+  <div class="number">
+    {{ userCount }}
+  </div>
+  <br /><br /><br />
+  <div class="btn">
+    <button class="btn btn-warning" (click)="getAllUsers()">
+      Get All Users
+    </button>
+  </div>
+  <button class="btn btn-warning" (click)="deleteAllUsers()">
+    Delete users
+  </button>
+</div>
